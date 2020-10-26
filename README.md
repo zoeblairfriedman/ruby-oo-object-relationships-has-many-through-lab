@@ -129,5 +129,3 @@ doogie = Doctor.new("Doogie Howser")
 
 new_appointment = Appointment.new('January 1st, 1989', ferris, doogie)
 ```
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/ruby-objects-has-many-through-lab'>Has Many Objects Through Lab</a> on Learn.co and start learning to code for free.</p>
