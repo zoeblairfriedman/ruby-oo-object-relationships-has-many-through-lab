@@ -55,8 +55,6 @@ madonna = Artist.new("Madonna")
 - The `Genre` class needs an instance method, `#artists`, that iterates over the
   genre's collection of songs and collects the artist that owns each song.
 
-Now let's move on to our `Doctor`/`Appointment`/`Patient` domain model.
-
 ```ruby
 pop = Genre.new("pop")
 ```
@@ -75,6 +73,9 @@ pop = Genre.new("pop")
 
 into_the_groove = Song.new("Into the Groove", madonna, pop)
 ```
+Now let's move on to our `Doctor`/`Appointment`/`Patient` domain model.
+
+**Note:** the tests will be calling your `#new_appointment` methods in your `Doctor` and `Patient` classes, as well as the `#initialize` method in the `Appointment` class. Therefore, in order to pass the tests, you will need to make sure that your method definitions specify the parameters in the order indicated below. 
 
 **The `Doctor` model:**
 
@@ -83,8 +84,9 @@ into_the_groove = Song.new("Into the Groove", madonna, pop)
   class variable.
 - A doctor should be initialized with a name and be saved in the `@@all` array.
 - The `Doctor` class needs an instance method, `#new_appointment`, that takes in a
-  an instance of the `Patient` class and a date, and creates a new `Appointment`. That
-  `Appointment` should know that it belongs to the doctor
+  date and an instance of the `Patient` class *in this order*, 
+  and creates a new `Appointment`. That `Appointment` should know that it belongs 
+  to the doctor
 - The `Doctor` class needs an instance method, `#appointments`, that iterates
   through all `Appointment`s and finds those belonging to this doctor.
 - The `Doctor` class needs an instance method, `#patients`, that iterates over
@@ -102,8 +104,9 @@ doogie = Doctor.new("Doogie Howser")
   class variable.
 - A patient is instantiated with a name and be saved in the `@@all` array.
 - The `Patient` class needs an instance method, `#new_appointment`, that takes in
-  an argument of a doctor and a date and creates a new `Appointment`. The
-  `Appointment` should know that it belongs to the patient.
+  a date and an instance of the `Doctor` class *in this order* 
+  and creates a new `Appointment`. The `Appointment` should know that it belongs 
+  to the patient.
 - The `Patient` class needs an instance method, `#appointments`, that iterates
   through the `Appointment`s array and returns `Appointment`s that belong to the
   patient.
@@ -120,8 +123,9 @@ ferris = Patient.new("Ferris Bueller")
 - The `Appointment` class needs a class variable `@@all` that begins as an empty array.
 - The `Appointment` class needs a class method `.all` that lists each `Appointment`
   in the class variable.
-- An `Appointment` should be initialized with a date (as a string, like `"Monday, August 1st"`), a patient, and a doctor. The `Appointment` should be saved in the
-  `@@all` array.
+- An `Appointment` should be initialized with a date (as a string, like `"Monday, 
+  August 1st"`), a patient, and a doctor *in this order*. The 
+  `Appointment` should be saved in the `@@all` array.
 
 ```ruby
 ferris = Patient.new("Ferris Bueller")
